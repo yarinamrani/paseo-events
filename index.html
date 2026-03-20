@@ -196,7 +196,7 @@ function buildPage() {
       <div class="vg" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
         ${VIDEOS.map(v => {
           if(v.videoSrc && !v.videoSrc.includes('instagram.com')) {
-            return '<div class="vcard"><video src="'+v.videoSrc+'" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;background:#2a2218"></video><div class="label"><p>'+v.label+'</p></div></div>';
+            return '<div class="vcard"><video src="'+v.videoSrc+'" controls playsinline preload="metadata" poster="'+IMG[v.img]+'" style="width:100%;height:100%;object-fit:cover;background:#2a2218"></video><div class="label"><p>'+v.label+'</p></div></div>';
           } else if(v.videoSrc && v.videoSrc.includes('instagram.com')) {
             return '<div class="vcard"><a href="'+v.videoSrc+'" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;text-decoration:none"><img src="'+IMG[v.img]+'" class="poster"/><div class="play-overlay"><div class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><polygon points="8,5 20,12 8,19"/></svg></div></div></a><div class="label"><p>'+v.label+'</p></div></div>';
           } else {
